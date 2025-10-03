@@ -13,7 +13,7 @@ builder.Services.AddDbContext<BlogContext>(
     }
 );
 var app = builder.Build();
-
+SeedData.TestVerileriniDoldur(app);
 app.MapGet("/", () => "Hello World!");
 
 app.Run();
