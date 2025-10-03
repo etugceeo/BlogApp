@@ -8,8 +8,10 @@ builder.Services.AddDbContext<BlogContext>(
     {
         //options.UseSqlite("data Source=blog.db"); this code may be too
         var config = builder.Configuration;
-        var connectionString = config.GetConnectionString("sql_connection");
-        options.UseSqlite(connectionString);
+        var connectionString = config.GetConnectionString("mysql_connection");
+        //options.UseSqlite(connectionString); when ı use sqllite
+        var version = new MySqlServerVersion(new Version(8, 4, 6));
+        options.UseMySql(connectionString, version);
     }
 );
 var app = builder.Build();

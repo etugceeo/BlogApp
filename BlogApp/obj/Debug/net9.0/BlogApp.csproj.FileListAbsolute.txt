@@ -151,3 +151,5 @@ C:\Users\ELIFT\Desktop\github\BlogApp\BlogApp\obj\Debug\net9.0\refint\BlogApp.dl
 C:\Users\ELIFT\Desktop\github\BlogApp\BlogApp\obj\Debug\net9.0\BlogApp.pdb
 C:\Users\ELIFT\Desktop\github\BlogApp\BlogApp\obj\Debug\net9.0\BlogApp.genruntimeconfig.cache
 C:\Users\ELIFT\Desktop\github\BlogApp\BlogApp\obj\Debug\net9.0\ref\BlogApp.dll
+C:\Users\ELIFT\Desktop\github\BlogApp\BlogApp\bin\Debug\net9.0\MySqlConnector.dll
+C:\Users\ELIFT\Desktop\github\BlogApp\BlogApp\bin\Debug\net9.0\Pomelo.EntityFrameworkCore.MySql.dll
