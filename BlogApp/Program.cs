@@ -18,6 +18,7 @@ builder.Services.AddDbContext<BlogContext>(
     }
 );
 builder.Services.AddScoped<IPostRepository,EfPostRepository>();
+builder.Services.AddScoped<ITagRepository,EfTagRepository>();
 var app = builder.Build();
 app.UseStaticFiles();
 SeedData.TestVerileriniDoldur(app);
