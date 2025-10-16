@@ -1,5 +1,6 @@
 using BlogApp.Data.Abstract;
 using BlogApp.Data.Concrete.EfCore;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,5 +23,15 @@ builder.Services.AddScoped<ITagRepository,EfTagRepository>();
 var app = builder.Build();
 app.UseStaticFiles();
 SeedData.TestVerileriniDoldur(app);
-app.MapDefaultControllerRoute();
+//app.MapDefaultControllerRoute();
+
+app.MapControllerRoute(
+    name: "post_details",
+    pattern: "posts/{url}",
+    defaults: new { controller = "Posts", action = "Details" }
+);
+app.MapControllerRoute(
+    name: "default",
+    pattern:"{controller=Home}/{action=index}/{id?}"
+);
 app.Run();

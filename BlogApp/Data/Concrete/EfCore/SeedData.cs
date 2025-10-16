@@ -19,11 +19,11 @@ public static class SeedData
             if (!context.Tags.Any())
             {
                 context.Tags.AddRange(
-                    new Tag { Text = "Web Programlama" },
-                    new Tag { Text = "backend" },
-                    new Tag { Text = "frontend" },
-                    new Tag { Text = "fullstack" },
-                    new Tag { Text = "php" }
+                    new Tag { Text = "Web Programlama", Url = "web-programlama" },
+                    new Tag { Text = "backend", Url = "backend" },
+                    new Tag { Text = "frontend", Url = "frontend" },
+                    new Tag { Text = "fullstack", Url = "fullstack" },
+                    new Tag { Text = "php", Url = "php" }
                     );
                 context.SaveChanges();
             }
@@ -42,6 +42,7 @@ public static class SeedData
                     {
                         Title = "Asp.net core",
                         Content = "asp.net core dersleri",
+                        Url = "aspnet-core",
                         IsActive = true,
                         PublishedOn = DateTime.Now.AddDays(-10),
                         Tags = context.Tags.Take(3).ToList(),
@@ -52,18 +53,53 @@ public static class SeedData
                     {
                         Title = "Php",
                         Content = "Php dersleri",
+                        Url = "php",
                         IsActive = true,
                         PublishedOn = DateTime.Now.AddDays(-20),
                         Tags = context.Tags.Take(2).ToList(),
-                        Image= "2.jpg",
+                        Image = "2.jpg",
                         UserId = 1
                     },
                     new Post
                     {
                         Title = "Django",
                         Content = "Django dersleri",
+                        Url = "django",
                         IsActive = true,
-                        PublishedOn = DateTime.Now.AddDays(-5),
+                        PublishedOn = DateTime.Now.AddDays(-30),
+                        Tags = context.Tags.Take(4).ToList(),
+                        Image = "3.jpg",
+                        UserId = 2
+                    },
+                    new Post
+                    {
+                        Title = "React Dersleri",
+                        Content = "React dersleri",
+                        Url = "react-dersleri",
+                        IsActive = true,
+                        PublishedOn = DateTime.Now.AddDays(-40),
+                        Tags = context.Tags.Take(4).ToList(),
+                        Image = "3.jpg",
+                        UserId = 2
+                    },
+                    new Post
+                    {
+                        Title = "Angular",
+                        Content = "Angular dersleri",
+                        Url = "angular",
+                        IsActive = true,
+                        PublishedOn = DateTime.Now.AddDays(-50),
+                        Tags = context.Tags.Take(4).ToList(),
+                        Image = "3.jpg",
+                        UserId = 2
+                    },
+                    new Post
+                    {
+                        Title = "Web Tasarım Dersleri",
+                        Content = "Web Tasarım Dersleri",
+                        Url = "web-tasarim",
+                        IsActive = true,
+                        PublishedOn = DateTime.Now.AddDays(-60),
                         Tags = context.Tags.Take(4).ToList(),
                         Image = "3.jpg",
                         UserId = 2
