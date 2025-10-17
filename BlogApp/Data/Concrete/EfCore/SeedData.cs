@@ -1,4 +1,5 @@
 using System;
+using System.Security.Cryptography.X509Certificates;
 using BlogApp.Entity;
 using Microsoft.EntityFrameworkCore;
 
@@ -19,19 +20,19 @@ public static class SeedData
             if (!context.Tags.Any())
             {
                 context.Tags.AddRange(
-                    new Tag { Text = "Web Programlama", Url = "web-programlama" },
-                    new Tag { Text = "backend", Url = "backend" },
-                    new Tag { Text = "frontend", Url = "frontend" },
-                    new Tag { Text = "fullstack", Url = "fullstack" },
-                    new Tag { Text = "php", Url = "php" }
+                    new Tag { Text = "Web Programlama", Url = "web-programlama", Color = TagColors.warning },
+                    new Tag { Text = "backend", Url = "backend" ,Color=TagColors.info},
+                    new Tag { Text = "frontend", Url = "frontend",Color=TagColors.success },
+                    new Tag { Text = "fullstack", Url = "fullstack",Color=TagColors.secondary },
+                    new Tag { Text = "php", Url = "php", Color=TagColors.primary}
                     );
                 context.SaveChanges();
             }
             if (!context.Users.Any())
             {
                 context.Users.AddRange(
-                    new User { UserName = "eliftugce" },
-                    new User { UserName = "ahmetyilmaz" }
+                    new User { UserName = "eliftugce", Image="p1.jpg" },
+                    new User { UserName = "ahmetyilmaz", Image="p2.jpg"}
                 );
                 context.SaveChanges();
             }
@@ -47,7 +48,12 @@ public static class SeedData
                         PublishedOn = DateTime.Now.AddDays(-10),
                         Tags = context.Tags.Take(3).ToList(),
                         Image = "1.jpg",
-                        UserId = 1
+                        UserId = 1,
+                        Comments = new List<Comment>
+                        {
+                            new Comment {Text="İyi bir kurs", PublishedOn = new DateTime(),UserId=1},
+                            new Comment {Text="Çok faydalandığım bir kurs", PublishedOn = new DateTime(),UserId=2}
+                        }
                     },
                     new Post
                     {
