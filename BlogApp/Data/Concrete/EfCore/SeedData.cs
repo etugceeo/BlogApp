@@ -31,8 +31,9 @@ public static class SeedData
             if (!context.Users.Any())
             {
                 context.Users.AddRange(
-                    new User { UserName = "ozlem_tunc", Image="p1.jpg" },
-                    new User { UserName = "tuba_cingöz", Image="p2.jpg"}
+                    new User { UserName = "ozlem_tunc",Name="Özlem Tunç",Email="ozlemtunc@gmail.com",Password="123456", Image="p1.jpg" },
+                    new User { UserName = "tuba_cingoz",Name="Tuba Cingöz",Email="tubacingoz@hotmail.com",Password="123456", Image="p2.jpg" }
+
                 );
                 context.SaveChanges();
             }
